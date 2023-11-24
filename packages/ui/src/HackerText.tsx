@@ -5,6 +5,7 @@ import { Fragment, useCallback, useEffect, useState } from "react";
 interface Props {
   children: string;
   duration?: number;
+  shouldPlay?: boolean;
   as?: React.JSXElementConstructor<any> | keyof React.JSX.IntrinsicElements;
   asChild?: boolean;
   className?: string;
@@ -64,9 +65,11 @@ export default function ColoredHackerText({
   duration,
   className,
   repeat = 0,
+  shouldPlay = false,
   autoStart = true,
   colored,
 }: Props) {
+  const [hasPlayed, setHasPlayed] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [text, setText] = useState(
     autoStart ? children?.toString() : maskText(children?.toString()),
@@ -75,7 +78,6 @@ export default function ColoredHackerText({
 
   const animate = useCallback(
     async function animate() {
-      console.log("animate");
       setIsAnimating(true);
 
       for await (const chunk of unmask(
@@ -87,12 +89,14 @@ export default function ColoredHackerText({
       }
 
       setIsAnimating(false);
+      setHasPlayed(true);
     },
     [duration, children],
   );
 
   useEffect(() => {
-    if (!autoStart) return;
+    if (!autoStart && !shouldPlay) return;
+    if (shouldPlay && !autoStart && hasPlayed) return;
 
     animate();
 
@@ -107,7 +111,7 @@ export default function ColoredHackerText({
     }, repeat);
 
     return () => clearInterval(id);
-  }, [children, animate, autoStart, duration, repeat]);
+  }, [children, hasPlayed, shouldPlay, animate, autoStart, duration, repeat]);
 
   function onHover() {
     console.log("onHover");

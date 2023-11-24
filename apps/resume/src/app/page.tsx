@@ -1,4 +1,6 @@
 import clsx from "clsx";
+import Avatar from "@radix-ui/react-avatar";
+import WorkExperience from "@/components/work-experience";
 
 export default function Page() {
   return (
@@ -76,6 +78,7 @@ export default function Page() {
             <h1 className="-mb-2 text-2xl font-bold">Experience</h1>
 
             <WorkExperience
+              image="/companies/palette.jpeg"
               role="Software Engineer, Rust"
               company="Palette"
               period="Jul 2023"
@@ -91,6 +94,7 @@ export default function Page() {
             </WorkExperience>
 
             <WorkExperience
+              image="/companies/aquacloud.jpeg"
               role="Software Engineer"
               company="Aquacloud"
               period="Sept 2021 - Nov 2023"
@@ -110,6 +114,7 @@ export default function Page() {
             </WorkExperience>
 
             <WorkExperience
+              image="/companies/facile.jpeg"
               role="React Engineer"
               company="Facile.it"
               period="May 2021 - Sept 2021"
@@ -124,6 +129,7 @@ export default function Page() {
             </WorkExperience>
 
             <WorkExperience
+              image="/companies/chili.jpeg"
               role="Frontend Engineer"
               company="CHILI"
               period="June 2020 - May 2021"
@@ -163,6 +169,7 @@ export default function Page() {
             </WorkExperience>
 
             <WorkExperience
+              image="/companies/simul_tech.jpeg"
               role="Fullstack Developer"
               company="Simultech"
               period="Dec 2018 - June 2020"
@@ -262,46 +269,6 @@ export default function Page() {
         </div>
       </div>
     </>
-  );
-}
-
-interface WorkExperience {
-  role: string;
-  company: string;
-  period: string;
-  extra?: string;
-  location: string;
-  children?: React.ReactNode;
-  technologies?: string[];
-  image?: string;
-
-  className?: string;
-}
-
-function WorkExperience(props: WorkExperience) {
-  return (
-    <div className="space-y-4">
-      <div className="flex gap-4 justify-start items-end max-sm:items-start max-sm:flex-col">
-        <div className="w-12 h-12 rounded border max-sm:hidden bg-neutral-3 border-neutral-6" />
-        <div className="flex flex-col justify-start items-start">
-          <h3 className="font-mono text-lg font-bold sm:text-xl text-neutral-12">
-            {props.role} @ {props.company}
-          </h3>
-          <p className="font-mono">
-            {props.period}, {props.extra ? `${props.extra},` : ""}{" "}
-            {props.location}
-          </p>
-        </div>
-        {props.technologies && (
-          <p className="font-mono text-sm font-medium capitalize sm:ml-auto">
-            {props.technologies.join(", ")}
-          </p>
-        )}
-      </div>
-      <div className={clsx(props.className, "leading-relaxed text-neutral-11")}>
-        {props.children}
-      </div>
-    </div>
   );
 }
 
