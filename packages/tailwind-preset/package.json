@@ -1,0 +1,14 @@
+{
+  "name": "@repo/tailwind-preset",
+  "main": "tailwind.preset.ts",
+  "exports": {
+    "./colors.css": "./colors.css",
+    ".": "./tailwind.preset.ts"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  },
+  "dependencies": {
+    "@radix-ui/colors": "^3.0.0"
+  }
+}

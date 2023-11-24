@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+p {
+  @apply text-neutral-11;
+}
+
+p > a {
+  @apply text-primary-11;
+}
+
+a:hover {
+  @apply underline;
+}
