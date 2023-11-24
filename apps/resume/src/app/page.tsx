@@ -10,7 +10,7 @@ export default function Page() {
         <h1 className="text-5xl font-bold text-neutral-12">Federico Vitale</h1>
       </div>
       <div className="grid grid-cols-1 items-start mt-12 sm:grid-cols-8 sm:gap-4">
-        <aside className="self-start space-y-6 sm:top-12 sm:col-span-2 max-sm:mb-16 sM:sticky">
+        <aside className="self-start space-y-6 sm:sticky sm:top-12 sm:col-span-2 max-sm:mb-16">
           <div className="space-y-2">
             <h3 className="font-mono font-medium text-neutral-12">
               Things I work with
