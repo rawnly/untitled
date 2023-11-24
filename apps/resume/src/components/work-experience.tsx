@@ -27,7 +27,12 @@ export default function WorkExperience(props: WorkExperience) {
       <div className="flex gap-4 justify-start items-end max-sm:items-start max-sm:flex-col">
         <div className="overflow-hidden relative w-12 h-12 rounded print:hidden">
           {props.image && (
-            <Image fill className="w-full h-full" src={props.image} />
+            <Image
+              fill
+              alt={props.company}
+              className="w-full h-full"
+              src={props.image}
+            />
           )}
         </div>
         <div className="flex flex-col justify-start items-start">
