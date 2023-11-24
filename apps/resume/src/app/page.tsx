@@ -1,17 +1,30 @@
 import clsx from "clsx";
 import Avatar from "@radix-ui/react-avatar";
 import WorkExperience from "@/components/work-experience";
+import { MagneticContainer } from "@repo/ui/magnet";
+import ScrambledText from "@repo/ui/hacker-text";
+import Link from "next/link";
 
 export default function Page() {
   return (
     <>
       <div className="space-y-2 font-mono">
-        <h2 className="text-2xl font-bold text-neutral-12">
+        <ScrambledText
+          as="h2"
+          colored
+          className="text-2xl font-bold text-neutral-12"
+        >
           Software Engineer
-        </h2>
-        <h1 className="text-5xl font-bold text-neutral-12">Federico Vitale</h1>
+        </ScrambledText>
+        <ScrambledText
+          colored
+          as="h1"
+          className="text-5xl font-bold text-neutral-12"
+        >
+          Federico Vitale
+        </ScrambledText>
       </div>
-      <div className="grid grid-cols-1 items-start mt-12 sm:grid-cols-8 sm:gap-4">
+      <div className="grid grid-cols-1 items-start mt-12 sm:grid-cols-8 sm:gap-8">
         <aside className="self-start space-y-6 sm:sticky sm:top-12 sm:col-span-2 max-sm:mb-16">
           <div className="space-y-2">
             <h3 className="font-mono font-medium text-neutral-12">
@@ -61,7 +74,20 @@ export default function Page() {
               </li>
             </ul>
           </div>
+          {/* <div className="grid grid-cols-2 gap-4"> */}
+          {/*   <MagneticContainer direction="x"> */}
+          {/*     <button className="w-full text-sm font-medium text-center rounded border hover:opacity-75 bg-neutral-3 border-neutral-6 text-neutral-12"> */}
+          {/*       <p className="py-2 px-4">PDF</p> */}
+          {/*     </button> */}
+          {/*   </MagneticContainer> */}
+          {/*   <MagneticContainer direction="x"> */}
+          {/*     <button className="w-full text-sm font-medium text-center rounded border hover:opacity-75 bg-neutral-3 border-neutral-6 text-neutral-12"> */}
+          {/*       <p className="py-2 px-4">PDF</p> */}
+          {/*     </button> */}
+          {/*   </MagneticContainer> */}
+          {/* </div> */}
         </aside>
+
         <div className="col-span-6">
           <div className="space-y-2">
             <h1 className="text-2xl font-bold">About Me</h1>
@@ -70,12 +96,26 @@ export default function Page() {
               brother, who despite everything, engaged me in tech and science.
               His love for games and technology deeply influenced me and
               inspired my career choice. Now as a Software Engineer, I thrive on
-              perpetual learning and the exploration of emerging technologies.
+              perpetual learning and the exploration of emerging technologies.{" "}
+              <Link
+                href="https://untitled.dev/about"
+                className="font-mono text-xs"
+              >
+                [Learn more]
+              </Link>
             </p>
           </div>
 
           <div className="flex flex-col gap-8 mt-16 space-y-2">
             <h1 className="-mb-2 text-2xl font-bold">Experience</h1>
+            <WorkExperience
+              image="/companies/satispay.jpeg"
+              role="Software Engineer"
+              company="Satispay"
+              period="Dec 2023 - Current"
+              technologies={["React", "Typescript"]}
+              location="Milan (Hybrid)"
+            ></WorkExperience>
 
             <WorkExperience
               image="/companies/palette.jpeg"
@@ -84,6 +124,7 @@ export default function Page() {
               period="Jul 2023"
               technologies={["Rust", "Tokio", "Apache Kafka"]}
               location="San Francisco (Remote)"
+              extra="contract"
             >
               I assisted Palette in transitioning a TypeScript micro-service to
               Rust. My primary responsibilities included utilising Rust’s

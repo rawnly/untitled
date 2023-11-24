@@ -78,6 +78,7 @@ export default function ColoredHackerText({
 
   const animate = useCallback(
     async function animate() {
+      setHasPlayed(true);
       setIsAnimating(true);
 
       for await (const chunk of unmask(
@@ -89,14 +90,13 @@ export default function ColoredHackerText({
       }
 
       setIsAnimating(false);
-      setHasPlayed(true);
     },
     [duration, children],
   );
 
   useEffect(() => {
     if (!autoStart && !shouldPlay) return;
-    if (shouldPlay && !autoStart && hasPlayed) return;
+    if (shouldPlay && !autoStart && hasPlayed && !repeat) return;
 
     animate();
 

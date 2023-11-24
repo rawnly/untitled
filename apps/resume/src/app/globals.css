@@ -10,6 +10,6 @@ p > a {
   @apply text-primary-11;
 }
 
-a:hover {
+a:hover:not(.magnetic) {
   @apply underline;
 }

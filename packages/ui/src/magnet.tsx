@@ -9,6 +9,7 @@ import clsx from "clsx";
 interface Props extends LinkProps {
   children: React.ReactNode;
   className?: string;
+  rotate?: boolean;
 }
 
 const AnimatedLink = animated(Link);
@@ -22,12 +23,18 @@ export function MagneticContainer({
   max,
 }: {
   children: React.ReactNode;
-  direction?: "x" | "y";
+  direction?: "x" | "y" | "both";
   scale?: boolean;
   rotate?: boolean;
   max?: number;
 }) {
-  const offset = useSpringValue(0, {
+  const offsetX = useSpringValue(0, {
+    config: {
+      ...config.wobbly,
+    },
+  });
+
+  const offsetY = useSpringValue(0, {
     config: {
       ...config.wobbly,
     },
@@ -44,17 +51,13 @@ export function MagneticContainer({
     <AnimatedSlot
       style={{
         willChange: "transform",
-        translate3d: [
-          direction === "x" ? offset : 0,
-          direction === "y" ? offset : 0,
-          1,
-        ],
+        translate3d: [offsetX, offsetY, 1],
         rotate3d: shouldRotate
           ? [
               direction === "y" ? 1 : 0,
               direction === "x" ? 1 : 0,
               0,
-              offset.to((x) => x * 2.5),
+              offsetX.to((x) => x * 2.5),
             ]
           : undefined,
         scale,
@@ -64,29 +67,52 @@ export function MagneticContainer({
           delay: 75,
         });
 
-        offset.start(0, {
+        offsetY.start(0, {
+          delay: 75,
+        });
+
+        offsetX.start(0, {
           delay: 75,
         });
       }}
       onMouseMove={(e) => {
-        let val = 0,
-          center = 0;
-
         switch (direction) {
-          case "x":
-            let { left, width } = e.currentTarget.getBoundingClientRect();
-            center = left + width / 2;
-            val = (e.clientX - center) / 10;
+          case "x": {
+            const { left, width } = e.currentTarget.getBoundingClientRect();
+            const center = left + width / 2;
+            let val = (e.clientX - center) / 10;
+            if (max !== undefined) val = Math.min(Math.max(val, -max), max);
+            offsetX.start(val);
             break;
-          case "y":
+          }
+          case "y": {
             let { top, height } = e.currentTarget.getBoundingClientRect();
-            center = top + height / 2;
-            val = (e.clientY - center) / 10;
+            const center = top + height / 2;
+            let val = (e.clientY - center) / 10;
+            if (max !== undefined) val = Math.min(Math.max(val, -max), max);
+            offsetY.start(val);
             break;
+          }
+          case "both": {
+            const { top, left, width, height } =
+              e.currentTarget.getBoundingClientRect();
+
+            const centerY = top + height / 2;
+            const centerX = left + width / 2;
+            let valY = (e.clientY - centerY) / 10;
+            let valX = (e.clientX - centerX) / 10;
+
+            if (max !== undefined) {
+              valY = Math.min(Math.max(valY, -max), max);
+              valX = Math.min(Math.max(valX, -max), max);
+            }
+
+            offsetY.start(valY);
+            offsetX.start(valX);
+            break;
+          }
         }
 
-        if (max !== undefined) val = Math.min(Math.max(val, -max), max);
-        offset.start(val);
         if (shouldScale) scale.start(1.01);
       }}
     >
@@ -95,7 +121,11 @@ export function MagneticContainer({
   );
 }
 
-export default function MagneticLink({ children, ...props }: Props) {
+export default function MagneticLink({
+  children,
+  rotate = false,
+  ...props
+}: Props) {
   const offset = useSpringValue(0, {
     config: {
       ...config.wobbly,
@@ -107,6 +137,7 @@ export default function MagneticLink({ children, ...props }: Props) {
     <AnimatedLink
       {...props}
       className={clsx(
+        "magnetic",
         "py-2 px-4 rounded transition-colors hover:bg-neutral-2",
         props.className,
       )}
@@ -127,7 +158,7 @@ export default function MagneticLink({ children, ...props }: Props) {
         style={{
           willChange: "transform",
           translate3d: [offset, 0, 1],
-          rotate3d: [0, 1, 0, offset.to((x) => x * 2.5)],
+          rotate3d: rotate ? [0, 1, 0, offset.to((x) => x * 2.5)] : undefined,
         }}
       >
         {children}
