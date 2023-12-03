@@ -1,0 +1,168 @@
+{
+  "main": {
+    "id": "553779824fece851",
+    "type": "split",
+    "children": [
+      {
+        "id": "9072dd3255775575",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b2d30b2bfa4e827f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "drafts/monorepo-rust-typescript.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e43c6bbb1df41aa2",
+    "type": "split",
+    "children": [
+      {
+        "id": "fb5d09467e61e5d3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1cf4fa625b425e34",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5d18a5ea364cf565",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "08d1bee7ce5ea894",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8af81161a1ff9ea9",
+    "type": "split",
+    "children": [
+      {
+        "id": "c24c8f8b0abc0f7a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "90ece2388cdfcfa5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "drafts/monorepo-rust-typescript.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "025ffdc533f13725",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "drafts/monorepo-rust-typescript.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a3bcca0eafbc9752",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ce18c07efa60b6e9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "drafts/monorepo-rust-typescript.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "1cf4fa625b425e34",
+  "lastOpenFiles": [
+    "github/delete-all-deployments.md",
+    "drafts/rust-multithread-test.md",
+    "react/radix-ui-popover-size.md",
+    "Untitled.canvas",
+    "drafts/monorepo-rust-typescript.md",
+    "thread-safe-queue-rust.md",
+    "Invalid date.md",
+    "github/delete-all--workflows-runs.md",
+    "gen-secrets-openssl.md",
+    "env-to-docker-build.md",
+    "npm/next-wayfinder.md",
+    "github/get-next-build-number.md",
+    "vpn-for-non-technical.md",
+    "port-5000-macos.md",
+    "git-diff-against-last-commit.md",
+    "find-and-replace-ripgrep.md"
+  ]
+}

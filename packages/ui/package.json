@@ -4,7 +4,8 @@
   "private": true,
   "exports": {
     "./magnet": "./src/magnet.tsx",
-    "./hacker-text": "./src/HackerText.tsx"
+    "./hacker-text": "./src/HackerText.tsx",
+    "./analytics": "./src/posthog-provider.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -23,6 +24,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@react-spring/web": "^9.7.3"
+    "@react-spring/web": "^9.7.3",
+    "posthog-js": "^1.93.3"
   }
 }
