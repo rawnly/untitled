@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@radix-ui/colors/mauve.css";
+@import "@radix-ui/colors/mauve-dark.css";
+
+@import "@radix-ui/colors/slate.css";
+@import "@radix-ui/colors/slate-dark.css";
+
+@import "@radix-ui/colors/gold.css";
+@import "@radix-ui/colors/gold-dark.css";
+
+*::selection {
+  @apply bg-primary-6 text-primary-11;
+}
+
+html,
+body {
+  @apply font-sans;
+}
+
+#post-content {
+  @apply text-lg;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-neutral-12;
+}
+
+b,
+strong {
+  @apply text-neutral-12;
+}
+
+pre code {
+  padding: 0 !important;
+  font-weight: 400 !important;
+}
+
+[data-rehype-pretty-code-fragment] {
+  @apply mt-4 text-sm;
+}
+
+body[data-focus-mode="true"] .focusable-row {
+  @apply text-neutral-11 transition-all;
+  opacity: 0.5;
+}
+
+body[data-focus-mode="true"] .focusable-row:hover {
+  @apply text-neutral-12;
+  opacity: 1;
+}
+
+.navbar::before {
+  --size: 6px;
+  --to: 60%;
+  --color: var(--mauve-1);
+
+  backdrop-filter: blur(12px);
+  mask-image: linear-gradient(to bottom, var(--color) var(--to), transparent);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    var(--color) var(--to),
+    transparent
+  );
+
+  background-color: transparent;
+  background-size: var(--size) var(--size);
+  background-image: radial-gradient(rgba(0, 0, 0, 0) 2px, var(--color) 1px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .navbar::before {
+    background-image: radial-gradient(rgba(0, 0, 0, 0) 2px, var(--color) 1px);
+  }
+}
+
+.navbar::after,
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: -1px 0px -50%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.line--highlighted,
+.word {
+  @apply bg-neutral-6 w-full;
+}
