@@ -7,7 +7,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import { fontMono } from "@/fonts";
 import { Suspense } from "react";
-import PostHogPageView from "./posthog-provider";
+import PostHogPageView from "@repo/ui/analytics";
 
 const inter = Inter({
   subsets: ["latin"],

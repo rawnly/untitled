@@ -33,6 +33,6 @@ export default function PostHogPageView() {
 }
 
 
-export function PHProvider({ children }: { children: React.ReactNode }) {
+export function PHProvider({ children }: { children?: any }) {
   return <PostHogProvider client={posthog}>{children}</PostHogProvider>
 }
