@@ -1,6 +1,6 @@
-import Link from "next/link";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
+
+import Link from "next/link";
 import { headers } from "next/headers";
 import PreviewBadge from "@/components/PreviewBadge";
 import Script from "next/script";
