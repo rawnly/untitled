@@ -4,8 +4,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import Link from "next/link";
+import PageView from '@repo/ui/analytics'
+import { Suspense } from 'react'
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: '--font-sans' });
 
 export const metadata: Metadata = {
   title: "Feedback - Federico Vitale",
@@ -19,7 +21,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx(inter.className, "bg-neutral-1")}>
+      <body className={clsx(inter.className, inter.variable, "bg-neutral-1")}>
+        <Suspense>
+          <PageView />
+        </Suspense>
         <Providers>
           <nav className="flex sticky top-0 gap-4 justify-start items-center py-4 px-8 navbar z-[9999]">
             <div className="inset-0 z-50 aboslute">
@@ -33,7 +38,7 @@ export default function RootLayout({
             </div>
           </nav>
           <div className="flex flex-col gap-8 py-24 px-4 md:px-12">
-            {children}
+              {children}
           </div>
         </Providers>
       </body>
