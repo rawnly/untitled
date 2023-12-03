@@ -7,6 +7,14 @@ const nextConfig = {
   images: {
     domains: ["https://github.com", "https://linkedin.com"],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/ingest/:path*',
+        destination: 'https://app.posthog.com/:path*'
+      }
+    ]
+  }
 };
 
 module.exports = nextConfig;

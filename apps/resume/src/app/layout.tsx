@@ -6,6 +6,8 @@ import "@repo/tailwind-preset/colors.css";
 import "./globals.css";
 import { Providers } from "./providers";
 import { fontMono } from "@/fonts";
+import { Suspense } from "react";
+import PostHogPageView from "./posthog-provider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,6 +33,9 @@ export default function RootLayout({
           "font-sans bg-neutral-1",
         )}
       >
+        <Suspense>
+          <PostHogPageView />
+        </Suspense>
         <Providers>
           <div className="fixed top-0 z-50 w-full h-16 bg-gradient-to-b from-white to-transparent dark:from-neutral-1" />
           <div className="fixed bottom-0 z-50 w-full h-16 bg-gradient-to-t from-white to-transparent dark:from-neutral-1" />

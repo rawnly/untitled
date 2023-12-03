@@ -100,6 +100,7 @@ export default function Page() {
               <Link
                 href="https://untitled.dev/about"
                 className="font-mono text-xs"
+                data-attr="autocapture-button"
               >
                 [Learn more]
               </Link>
