@@ -74,14 +74,6 @@ export default function RootLayout({
             </nav>
           </div>
         </footer>
-        <Script
-          defer
-          type="text/javascript"
-          src="https://datapulse.app/datapulse.min.js"
-          id="datapulse"
-          data-endpoint="https://datapulse.app/api/v1/event"
-          data-workspace="clk2mfm3o031ae93762gsvxog"
-        />
       </body>
     </html>
   );
