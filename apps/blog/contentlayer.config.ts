@@ -80,7 +80,7 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: "vitesse-dark",
+          theme: "one-dark-pro",
           onVisitLine: (node: any) => {
             if (node.children.length === 0) {
               node.children = [

@@ -153,8 +153,9 @@ export const blockquote = ({
 
 const codeVariants = tv({
   base: [
-    "text-neutral-12 bg-neutral-3 tabular-nums",
-    "relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold",
+    "tabular-nums",
+    "relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm",
+    "text-neutral-12"
   ],
 });
 
@@ -172,9 +173,10 @@ export function code({
 
 const preVariants = tv({
   base: [
-    "text-sm text-neutral-12",
-    "border border-neutral-6 rounded bg-neutral-3 p-4 my-4 overflow-x-scroll",
+    "text-sm",
+    "border rounded p-4 my-4 overflow-x-scroll",
     "relative group",
+    "bg-neutral-3 border-neutral-6"
   ],
 });
 
@@ -185,11 +187,9 @@ export function pre({
   ...props
 }: React.ComponentProps<"pre">) {
   return (
-    <CopyContent>
-      <pre className={preVariants({ className })} {...props}>
-        {children}
-      </pre>
-    </CopyContent>
+    <pre className={preVariants({ className })} {...props}>
+      {children}
+    </pre>
   );
 }
 

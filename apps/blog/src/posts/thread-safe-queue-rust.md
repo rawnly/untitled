@@ -208,8 +208,6 @@ mod test {
         assert_eq!(queue.len(), 4);
     }
 }
-
-
 ```
 
 This is just an example of how we can test the queue. As always this code can be tested in multiple ways, you could add some tests to check concurrent `pushes` and `pops` or test mixed operations.
