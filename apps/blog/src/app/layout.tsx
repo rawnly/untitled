@@ -83,7 +83,7 @@ const navigation = {
   main: [
     { name: "About", href: "/about" },
     { name: "Medium", href: "https://fedevitale.dev/medium" },
-    { name: "Resume", href: "https://fedevitale.dev/resume" },
+    { name: "Resume", href: "https://resume.fedevitale.dev" },
   ],
   social: [
     {
