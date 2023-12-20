@@ -2,13 +2,15 @@
 title: Next Wayfinder
 summary: Simplify Middleware Management in Next.js
 date: 2023-03-28
-image: /img/next-wayfinder.png
+image: /images/next-wayfinder/next-wayfinder.png
 tags:
   - react
   - nextjs
   - typescript
   - middleware
 ---
+
+![difference](/images/next-wayfinder/next-wayfinder.png)
 
 I'm excited to share with you a new package I've been working on called [`next-wayfinder`][repo].
 It's a lightweight and flexible package that simplifies middleware management in Next.js applications.

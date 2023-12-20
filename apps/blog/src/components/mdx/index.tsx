@@ -184,7 +184,7 @@ const preVariants = tv({
 export function img(props: any) {
   return (
     <img 
-      className='rounded-lg shadow-lg'
+      className='mx-auto w-full rounded-lg shadow-lg'
       src={props.src} 
       alt={props.alt} 
       style={{objectFit: "contain"}}
