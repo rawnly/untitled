@@ -56,7 +56,7 @@ export async function generateMetadata({
   };
 }
 
-export default function Layout(props: { params: Params }) {
+export default function Layout(props: { params: Params; children: React.ReactNode }) {
   const post = allPosts.find(findPost(props.params.slug));
 
   if (!post) notFound();
