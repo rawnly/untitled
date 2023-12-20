@@ -34,7 +34,7 @@
     "eslint-config-next": "14.0.3",
     "postcss": "^8",
     "radix-themes-tw": "^0.0.8",
-    "tailwindcss": "^3.3.0",
+    "tailwindcss": "^3.4.0",
     "typescript": "^5"
   }
 }

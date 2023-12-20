@@ -8,12 +8,18 @@ import { ExternalLink } from "lucide-react";
 import Balancer from "react-wrap-balancer";
 import { format } from "date-fns";
 import { Suspense } from "react";
+import ThemeSelector from '@repo/ui/theme-selector'
 import HackerText from "@/components/HackerText";
+import ThemeSwitch from "./theme-switch";
+
+type Params = {
+  slug: string
+}
 
 export async function generateMetadata({
   params,
 }: {
-  params: any;
+  params: Params;
 }): Promise<Metadata | undefined> {
   const post = allPosts.find(findPost(params.slug));
 
@@ -50,8 +56,8 @@ export async function generateMetadata({
   };
 }
 
-export default function Layout(p: any) {
-  const post = allPosts.find(findPost(p.params.slug));
+export default function Layout(props: { params: Params }) {
+  const post = allPosts.find(findPost(props.params.slug));
 
   if (!post) notFound();
 
@@ -59,7 +65,7 @@ export default function Layout(p: any) {
 
   return (
     <>
-      <nav className="flex sticky top-0 gap-4 justify-start items-center py-4 px-8 navbar z-[9999]">
+      <nav className="flex sticky top-0 gap-4 justify-start items-center py-4 px-8 navbar z-[51]">
         <div className="inset-0 z-50 aboslute">
           <Link href="/" className="hover:opacity-50 active:opacity-25">
             <HackerText
@@ -73,6 +79,7 @@ export default function Layout(p: any) {
           </Link>
         </div>
       </nav>
+      <ThemeSwitch className='absolute top-5 right-5 z-[52]'/>
       <div className="flex flex-col gap-8 py-24 px-4 md:px-12">
         <header className="flex flex-col gap-2 mb-8 w-full text-center sm:mb-16">
           <small>{date}</small>
@@ -95,7 +102,7 @@ export default function Layout(p: any) {
           </div>
         </header>
         <section>
-          {p.children}
+          {props.children}
           {post.origin && (
             <div className="flex flex-col gap-4 mt-4">
               <hr className="my-0 opacity-50" />

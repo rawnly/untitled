@@ -21,7 +21,7 @@ const colors = Object.keys(r)
 
 export default {
   darkMode: "class",
-  content: ["./src/**/*.{ts,tsx,js,jsx}"],
+  content: ["./src/**/*.{ts,tsx,js,jsx}", "../../packages/ui/src/**/*.{ts,tsx,js,jsx}"],
   theme: {
     colors: {
       ...colors,

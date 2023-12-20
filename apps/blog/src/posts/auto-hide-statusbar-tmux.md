@@ -2,7 +2,7 @@
 title: Effortless Status Bar Auto-Hide in tmux for Single Window Mode
 summary: Automatically hide status bar in tmux when only one window is open
 date: 2023-12-20
-image: https://github.com/podium-dot-build/lokus-app/assets/16429579/34e32edd-053a-415a-94d0-00c9f1a31f08
+image: /images/auto-hide-tmux-status-bar/image.png
 tags:
   - tmux  
   - shell 
