@@ -86,7 +86,7 @@ export default function Layout(props: { params: Params; children: React.ReactNod
           <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl text-neutral-12">
             <Balancer>{post.title}</Balancer>
           </h1>
-          <p className="mx-auto md:text-xl lg:text-2xl max-w-[600px]">
+          <p className="mx-auto md:text-xl lg:text-2xl max-w-[800px]">
             <Balancer>{post.summary}</Balancer>
           </p>
           <div className="flex flex-wrap gap-4 justify-center items-center mx-auto mt-4 text-sm max-sm:text-xs">
