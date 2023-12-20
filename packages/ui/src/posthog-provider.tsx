@@ -24,7 +24,9 @@ export default function PostHogPageView() {
       }
 
       posthog.capture("$pageview", {
-        $current_url: url
+        $current_url: url,
+        $env: process.env.NEXT_PUBLIC_VERCEL_ENV ?? 'development',
+        $project: process.env.NEXT_PUBLIC_PROJECT_NAME ?? 'unknown',
       })
     }
   }, [pathname, searchParams])
