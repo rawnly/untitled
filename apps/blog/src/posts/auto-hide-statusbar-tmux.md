@@ -31,6 +31,10 @@ set-hook -g after-new-window 'if "[ #{session_windows} -gt 1 ]" "set -g status o
 set-hook -g after-kill-pane 'if "[ #{session_windows} -lt 2 ]" "set -g status off"'
 set-hook -g pane-exited 'if "[ #{session_windows} -lt 2 ]" "set -g status off"'
 set-hook -g window-layout-changed 'if "[ #{session_windows} -lt 2 ]" "set -g status off"'
+
+# had to add this too in my personal config, the status bar weren't hiding on startup
+# even tho the `set -g status off` on the line before this block
+set-hook -g session-created 'if "[ #{session_windows} -lt 2 ]" "set -g status off"'
 ```
 
 As you can see, we check `after-new-window{:sh}` if there are more than 1 window then we show the statusbar.
