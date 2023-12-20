@@ -113,7 +113,7 @@ export default function Page() {
               image="/companies/satispay.jpeg"
               role="Software Engineer"
               company="Satispay"
-              period="Dec 2023 - Current"
+              period="2024"
               technologies={["React", "Typescript"]}
               location="Milan (Hybrid)"
             ></WorkExperience>
@@ -124,7 +124,7 @@ export default function Page() {
               company="Palette"
               period="Jul 2023"
               technologies={["Rust", "Tokio", "Apache Kafka"]}
-              location="San Francisco (Remote)"
+              location="San Francisco"
               extra="contract"
             >
               I assisted Palette in transitioning a TypeScript micro-service to
@@ -141,7 +141,7 @@ export default function Page() {
               company="Aquacloud"
               period="Sept 2021 - Nov 2023"
               technologies={["Next.js", "React", "Rust", "Typescript"]}
-              location="Trento (Remote)"
+              location="Trento"
             >
               Led the front-end team in our endeavor to develop an accessible
               and maintainable platform that drives innovation in the
@@ -161,7 +161,7 @@ export default function Page() {
               company="Facile.it"
               period="May 2021 - Sept 2021"
               technologies={["React", "PHP", "Typescript"]}
-              location="Mialn (Remote)"
+              location="Milan"
             >
               During my tenure at Facile, I was entrusted with the development
               of an internal tool specifically focused on refactoring the
@@ -176,7 +176,7 @@ export default function Page() {
               company="CHILI"
               period="June 2020 - May 2021"
               technologies={["React", "Typescript"]}
-              location="Milan (Remote)"
+              location="Milan"
               className="space-y-2"
             >
               <p>

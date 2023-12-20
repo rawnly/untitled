@@ -27,12 +27,12 @@ export default function WorkExperience(props: WorkExperience) {
     <div ref={ref} className="space-y-4">
       <div className="flex gap-4 justify-start items-end max-sm:items-start max-sm:flex-col">
         <MagneticContainer direction="both">
-          <div className="overflow-hidden relative w-12 h-12 rounded print:hidden">
+          <div className="overflow-hidden relative w-12 h-12 rounded aspect-square print:hidden">
             {props.image && (
               <Image
                 fill
                 alt={props.company}
-                className="w-full h-full"
+                className="w-full h-full aspect-square"
                 src={props.image}
               />
             )}
@@ -50,10 +50,10 @@ export default function WorkExperience(props: WorkExperience) {
         {props.technologies && (
           <p
             key={props.role + props.company}
-            className="space-x-2 uppercase sm:ml-auto print:hidden"
+            className="flex uppercase sm:flex-col sm:ml-auto max-sm:gap-2 print:hidden"
           >
-            {props.technologies.map((item, i) => (
-              <span key={item} className="font-mono text-xs font-medium">
+            {props.technologies.sort((a,b) => a.length - b.length).map((item, i) => (
+              <span key={item} className="font-mono text-xs font-medium text-right">
                 {item}
               </span>
             ))}
