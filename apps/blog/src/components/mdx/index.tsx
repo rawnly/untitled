@@ -65,7 +65,7 @@ export const h1 = ({
   <h1
     {...props}
     className={clsx(
-      "scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl",
+      "scroll-m-20 text-4xl font-extrabold tracking-tight first:mt-0 mt-10 lg:text-5xl",
       className
     )}
   >

@@ -6,6 +6,7 @@ origin: https://medium.com/swlh/thread-safe-queue-in-rust-1ed1acb9b93e
 tags:
   - rust
   - thread-safety
+  - multi-threading
 ---
 
 I started my rust journey ~1 year ago and I feel like it helped me a lot to become a better developer, even if I primarily work with React and Typescript.
@@ -51,9 +52,9 @@ struct FifoQueue<T> {
 }
 ```
 
-It's a simple generic struct with a `data` parameter holding the enqueued values. We use `VecDeque` over `Vec` for some convenience methods that we'll see later on.
+It's a simple generic struct with a `data` parameter holding the enqueued values. We use `VecDeque{:rust}` over `Vec{:rust}` for some convenience methods that we'll see later on.
 
-Now let's implement our `Queue<T>` trait for `FifoQueue<T>`
+Now let's implement our `Queue<T>{:rust}` trait for `FifoQueue<T>{:rust}`
 
 ```rust
 ///! queue/prelude.rs
@@ -84,7 +85,7 @@ impl<T> Queue<T> for FifoQueue<T> {
 }
 ```
 
-The reason why we choose to use `VecDeque` over a simple `Vec` is the ability to use the `pop_frop` / `push_back` and later on `pop_back` / `push_front` methods
+The reason why we choose to use `VecDeque{:rust}` over a simple `Vec{:rust}` is the ability to use the `pop_front` / `push_back` and later on `pop_back` / `push_front` methods
 
 ## Thread Safe? How?
 
@@ -92,7 +93,7 @@ Our queue now is completed but is not thread-safe, so it is subject to race cond
 
 > It's important to note that making a queue thread-safe can have an impact on performance, as synchronization mechanisms can slow down access to the queue. Therefore, it's important to evaluate whether a thread-safe queue is really necessary based on the needs of the program.
 
-To make our queue struct thread safe we just have to wrap the `data` property holding our values with a `Mutex` (`std::sync::Mutex` and `CondVar`) and check for its status on every operation.
+To make our queue struct thread safe we just have to wrap the `data` property holding our values with a `Mutex{:rust}` (`std::sync::Mutex{:rust}` and `CondVar{:rust}`) and check for its status on every operation.
 
 ```diff
 - data: VecDeque<T>
@@ -100,7 +101,7 @@ To make our queue struct thread safe we just have to wrap the `data` property ho
 + cv: CondVar
 ```
 
-The `Mutex` alone is not enough to be safe. The `CondVar` will allow us to wait for the queue to be populated before popping an element. In this way we can run 100 `pushes` and `pops` in parallel and have as a final result an empty queue.
+The `Mutex{:rust}` alone is not enough to be safe. The `CondVar{:rust}` will allow us to wait for the queue to be populated before popping an element. In this way we can run 100 `pushes` and `pops` in parallel and have as a final result an empty queue.
 
 First of all, let's update the `pop` method to return the element (`T`) itself and not the `Option`
 
@@ -109,7 +110,7 @@ First of all, let's update the `pop` method to return the element (`T`) itself a
 + fn pop(&self) -> T;
 ```
 
-> We update the method in the trait `queue/prelude.rs` to return always the element since now with CondVar we wait for the queue to be populated before popping an element.
+> We update the method in the trait `queue/prelude.rs` to return always the element since now with `CondVar{:rust}` we wait for the queue to be populated before popping an element.
 
 ```rust
 ///! queue/mod.rs
@@ -173,7 +174,7 @@ impl<T> Queue<T> for FifoQueue<T> {
 
 ## Testing
 
-In the following test, we create a new queue using the `Arc` (atomic reference count) of Rust, which allows us to share the queue instance safely between threads. Once the threads are completed, the tests check if the queue contains the inserted elements by all the threads.
+In the following test, we create a new queue using the `Arc{:rust}` (atomic reference count) of Rust, which allows us to share the queue instance safely between threads. Once the threads are completed, the tests check if the queue contains the inserted elements by all the threads.
 
 ```rust
 ///! queue/mod.rs
@@ -212,7 +213,7 @@ mod test {
 
 This is just an example of how we can test the queue. As always this code can be tested in multiple ways, you could add some tests to check concurrent `pushes` and `pops` or test mixed operations.
 
-> Hint: you can also add some delays using `thread::sleep()` to fake some overload.
+> Hint: you can also add some delays using `thread::sleep(){:rust}` to fake some overload.
 
 ## TLDR
 

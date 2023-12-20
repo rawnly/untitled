@@ -12,7 +12,7 @@ tags:
 I spent the day building a custom combobox using [`cmdk`][cmdk] and [`@radix-ui/react-popover`][popover],
 but at the end of the day the popover size wasn't following the trigger width.
 
-So by playing around I discovered that the popover injects the `--radix-ui-popover-trigger-width` css variable ito the popover content.
+So by playing around I discovered that the popover injects the `--radix-ui-popover-trigger-width{:css}` css variable ito the popover content.
 
 To fix this I just had to add the following css to my popover content:
 
