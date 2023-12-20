@@ -2,11 +2,14 @@
 title: Effortless Status Bar Auto-Hide in tmux for Single Window Mode
 summary: Automatically hide status bar in tmux when only one window is open
 date: 2023-12-20
+image: https://github.com/podium-dot-build/lokus-app/assets/16429579/34e32edd-053a-415a-94d0-00c9f1a31f08
 tags:
   - tmux  
   - shell 
   - bash
 ---
+
+![my-setup](/images/auto-hide-tmux-status-bar/image.png)
 
 # What 
 I want to hide my tmux status bar when only 1 window is open. Otherwise is shown.
@@ -32,5 +35,7 @@ set-hook -g window-layout-changed 'if "[ #{session_windows} -lt 2 ]" "set -g sta
 
 As you can see, we check `after-new-window{:sh}` if there are more than 1 window then we show the statusbar.
 On `after-kill-pane{:sh}`, `pane-exited{:sh}` and `window-layout-changed{:sh}` we check if windows are less than 2 then we hide the statusbar.
+
+![animated](/images/auto-hide-tmux-status-bar/animation.gif)
 
 In this way we achieved what we wanted, from now on when there's only 1 window open, the statusbar will be hidden.

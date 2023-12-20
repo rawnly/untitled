@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { tv } from "tailwind-variants";
 import CopyContent from "./CopyContent";
+import Image from "next/image";
 
 const linkVariants = tv({
   base: "text-primary-11 hover:underline",
@@ -179,6 +180,17 @@ const preVariants = tv({
     "bg-neutral-3 border-neutral-6"
   ],
 });
+
+export function img(props: any) {
+  return (
+    <img 
+      className='rounded-lg shadow-lg'
+      src={props.src} 
+      alt={props.alt} 
+      style={{objectFit: "contain"}}
+    />
+  )
+}
 
 export function pre({
   className,
