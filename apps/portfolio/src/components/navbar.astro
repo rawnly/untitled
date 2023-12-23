@@ -2,7 +2,7 @@
 import NavLink from './nav-link.astro'
 ---
 
-<nav class='flex items-center justify-start'>
+<nav class='flex max-sm:flex-col sm:items-center sm:justify-start'>
 	<div class='flex gap-4 items-center justify-start'>
 		<img src="https://github.com/rawnly.png" class='rounded-full aspect-square size-12' />
 		<div class='flex items-start justify-center mr-auto flex-col'>
@@ -13,7 +13,7 @@ import NavLink from './nav-link.astro'
 		</div>
 	</div>
 
-	<div class='flex gap-4 items-center justify-end ml-auto'>
+	<div class='flex max-sm:mt-12 gap-4 items-center justify-end max-sm:mx-auto sm:ml-auto'>
 		<NavLink href="https://untitled.dev">
 			Blog
 		</NavLink>

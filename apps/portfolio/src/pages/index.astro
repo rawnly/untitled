@@ -11,19 +11,19 @@ import Card from '../components/project-card.astro'
 		<meta name="generator" content={Astro.generator} />
 		<title>Federico Vitale - Software Engineer</title>
 	</head>
-	<body class='text-neutral-12 bg-neutral-1'>
+	<body class='text-neutral-12 p-8 bg-neutral-1'>
 		<div class="max-w-3xl py-12 mx-auto">
 			<Navbar />
 		</div>
-		<main class="max-w-xl pb-24 mx-auto">
-			<section class='py-12'>
+		<main class="max-w-xl sm:py-24 mx-auto">
+			<section class='max-sm:gap-12'>
 				<h1 class='text-3xl font-bold'>
 					Software Engineer Focused on 
 					<span class='text-orange-11 font-mono'>Rust</span>,{' '}
 					<span class='font-mono text-blue-11'>Go</span>
 					and <span class='font-mono text-teal-11'>TypeScript</span>
 				</h1>
-				<div class='flex items-center my-6 justify-start gap-4'>
+				<div class='flex flex-wrap items-center my-6 gap-4 text-center'>
 					<a href="mailto:mail@fedevitale.dev" class='px-3 text-sm rounded hover:bg-neutral-3 text-neutral-12 transition-colors font-mono py-1'>
 						mail@fedevitale.dev
 					</a>
@@ -52,7 +52,7 @@ import Card from '../components/project-card.astro'
 					At the age of 7, my passion for technology was sparked by my brother, who despite everything, engaged me in tech and science. His love for games and technology deeply influenced me and inspired my career choice. Now as a Software Engineer, I thrive on perpetual learning and the exploration of emerging technologies.
 				</p>
 			</section>
-			<section>
+			<section class='mt-12'>
 				<h2 class='font-bold text-2xl mb-4'>Projects</h2>
 				<div class='flex flex-wrap items-start justify-start gap-2'>
 					<Card href="https://github.com/rawnly/gist.nvim">
@@ -87,13 +87,13 @@ import Card from '../components/project-card.astro'
 					</Card>
 				</div>
 			</section>
-			<div class='fixed bottom-5 left-5 text-neutral-11 flex gap-2 items-center justify-start'>
-				<div class='relative size-2'>
-					<div class='w-full z-50 absolute inset-0 rounded-full bg-green-10' />
-					<div class='w-full absolute inset-0 rounded-full bg-green-6 animate-ping' />
-				</div>
-				<span>Currently in Milan, Italy</span>
-			</div>
 		</main>
+		<div class='sm:fixed max-sm:mt-12 max-sm:justify-center px-4 py-6 backdrop-blur w-full bottom-0 left-5 text-neutral-11 flex gap-2 items-center justify-start'>
+			<div class='relative size-2'>
+				<div class='w-full z-50 absolute inset-0 rounded-full bg-green-10' />
+				<div class='w-full absolute inset-0 rounded-full bg-green-6 animate-ping' />
+			</div>
+			<span>Currently in Milan, Italy</span>
+		</div>
 	</body>
 </html>
