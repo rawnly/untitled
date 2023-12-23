@@ -1,0 +1,34 @@
+---
+import NavLink from './nav-link.astro'
+---
+
+<nav class='flex items-center justify-start'>
+	<div class='flex gap-4 items-center justify-start'>
+		<img src="https://github.com/rawnly.png" class='rounded-full aspect-square size-12' />
+		<div class='flex items-start justify-center mr-auto flex-col'>
+			<h3 class='font-bold text-lg'>
+				Federico Vitale
+			</h3>
+			<p class='text-neutral-11'>Software Engineer</p>
+		</div>
+	</div>
+
+	<div class='flex gap-4 items-center justify-end ml-auto'>
+		<NavLink href="https://untitled.dev">
+			Blog
+		</NavLink>
+		<NavLink href="https://resume.untitled.dev">
+			Resume
+		</NavLink>
+		<NavLink href='https://untitled.dev/about'>
+		  About
+		</NavLink>
+		<NavLink href='https://twitter.com/fedevitaledev'>
+			X (Twitter)
+		</NavLink>
+		<NavLink href='https://github.com/rawnly'>
+			Github
+		</NavLink>
+	</div>
+</nav>
+

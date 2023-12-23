@@ -1,0 +1,28 @@
+@import "@radix-ui/colors/red.css";
+@import "@radix-ui/colors/orange.css";
+@import "@radix-ui/colors/blue.css";
+@import "@radix-ui/colors/green.css";
+@import "@radix-ui/colors/slate.css";
+@import "@radix-ui/colors/cyan.css";
+@import "@radix-ui/colors/teal.css";
+@import "@radix-ui/colors/mauve.css";
+@import "@radix-ui/colors/gold.css";
+
+@import "@radix-ui/colors/red-dark.css";
+@import "@radix-ui/colors/orange-dark.css";
+@import "@radix-ui/colors/blue-dark.css";
+@import "@radix-ui/colors/green-dark.css";
+@import "@radix-ui/colors/slate-dark.css";
+@import "@radix-ui/colors/cyan-dark.css";
+@import "@radix-ui/colors/teal-dark.css";
+@import "@radix-ui/colors/mauve-dark.css";
+@import "@radix-ui/colors/gold-dark.css";
+
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+  font-family: 'Berkeley Mono';
+  src: url('/fonts/font-mono.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
