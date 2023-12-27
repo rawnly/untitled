@@ -1,99 +1,78 @@
 ---
 import '../global.css'
-import Navbar from '../components/navbar.astro'
+import Layout from '../layouts/layout.astro'
 import Card from '../components/project-card.astro'
 ---
-<html lang="en" class='dark'>
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="https://github.com/rawnly.png?size=16" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Federico Vitale - Software Engineer</title>
-	</head>
-	<body class='text-neutral-12 p-8 bg-neutral-1'>
-		<div class="max-w-3xl py-12 mx-auto">
-			<Navbar />
+<Layout title="Federico Vitale - Software Engineer" description="Software Engineer focused on Rust, Go and Typescript">
+	<section class='max-sm:gap-12'>
+		<h1 class='text-3xl font-bold'>
+			Software Engineer Focused on 
+			<span class='text-orange-11 font-mono'>Rust</span>,{' '}
+			<span class='font-mono text-blue-11'>Go</span>
+			and <span class='font-mono text-teal-11'>TypeScript</span>
+		</h1>
+		<div class='flex flex-wrap items-center my-6 gap-4 text-center'>
+			<a href="mailto:mail@fedevitale.dev" class='px-3 text-sm rounded hover:bg-neutral-3 text-neutral-12 transition-colors font-mono py-1'>
+				mail@fedevitale.dev
+			</a>
+			<a target="_blank" href="https://twitter.com/fedevitaledev" class='px-3 text-sm rounded hover:bg-neutral-3 text-neutral-12 transition-colors font-mono py-1'>
+				@fedevitaledev
+			</a>
+			<a target="_blank" href="https://github.com/rawnly" class='px-3 text-sm rounded hover:bg-neutral-3 text-neutral-12 transition-colors font-mono py-1'>
+				@rawnly
+			</a>
 		</div>
-		<main class="max-w-xl sm:py-24 mx-auto">
-			<section class='max-sm:gap-12'>
-				<h1 class='text-3xl font-bold'>
-					Software Engineer Focused on 
-					<span class='text-orange-11 font-mono'>Rust</span>,{' '}
-					<span class='font-mono text-blue-11'>Go</span>
-					and <span class='font-mono text-teal-11'>TypeScript</span>
-				</h1>
-				<div class='flex flex-wrap items-center my-6 gap-4 text-center'>
-					<a href="mailto:mail@fedevitale.dev" class='px-3 text-sm rounded hover:bg-neutral-3 text-neutral-12 transition-colors font-mono py-1'>
-						mail@fedevitale.dev
-					</a>
-					<a target="_blank" href="https://twitter.com/fedevitaledev" class='px-3 text-sm rounded hover:bg-neutral-3 text-neutral-12 transition-colors font-mono py-1'>
-						@fedevitaledev
-					</a>
-					<a target="_blank" href="https://github.com/rawnly" class='px-3 text-sm rounded hover:bg-neutral-3 text-neutral-12 transition-colors font-mono py-1'>
-						@rawnly
-					</a>
-				</div>
-				<p class='tracking-tight'>
-					Currently working as <b>Software Engineer</b> at 
-					<a class="transition-colors italic hover:text-red-11" href="https://satispay.com" target="_blank">
-						Satispay
-					</a>, previously Senior Frontend Engineer at <a target="_blank" href="https://aquacloud.it" class='italic hover:text-blue-11'>Aquacloud</a>.
-					I really enjoy <span class='font-mono'>open-source</span>, make sure to <a class='font-bold italic hover:underline' href="https://github.com">check out my projects</a> and 
-					let me know on <a href="https://twitter.com/fedevitaledev" class='hover:text-cyan-11 italic mx-1'>𝕏</a> what do you think about them!
+		<p class='tracking-tight'>
+			Currently working as <b>Software Engineer</b> at 
+			<a class="transition-colors italic hover:text-red-11" href="https://satispay.com" target="_blank">
+				Satispay
+			</a>, previously Senior Frontend Engineer at <a target="_blank" href="https://aquacloud.it" class='italic hover:text-blue-11'>Aquacloud</a>.
+			I really enjoy <span class='font-mono'>open-source</span>, make sure to <a class='font-bold italic hover:underline' href="https://github.com">check out my projects</a> and 
+			let me know on <a href="https://twitter.com/fedevitaledev" class='hover:text-cyan-11 italic mx-1'>𝕏</a> what do you think about them!
 
-					<br />
-					<br />
+		<br />
+		<br />
 
-					I'm also passionate about Photography, feel free to view my <a class='italic hover:text-gold-11' href="https://unsplash.com/@fedevitale">Unsplash</a>
-				</p>
+			I'm also passionate about Photography, feel free to view my <a class='italic hover:text-gold-11' href="https://unsplash.com/@fedevitale">Unsplash</a>
+		</p>
 
-				<p class='mt-6 tracking-tight'>
-					At the age of 7, my passion for technology was sparked by my brother, who despite everything, engaged me in tech and science. His love for games and technology deeply influenced me and inspired my career choice. Now as a Software Engineer, I thrive on perpetual learning and the exploration of emerging technologies.
-				</p>
-			</section>
-			<section class='mt-12'>
-				<h2 class='font-bold text-2xl mb-4'>Projects</h2>
-				<div class='flex flex-wrap items-start justify-start gap-2'>
-					<Card href="https://github.com/rawnly/gist.nvim">
-						gist.nvim
-					</Card>
-					<Card href="https://next-wayfinder.dev">
-						next-wayfinder
-					</Card>
-					<Card href="https://github.com/rawnly/hawk">
-						hawk
-					</Card>
-					<Card href="https://raycast-music.app">
-						Raycast Music
-					</Card>
-					<Card href="https://github.com/rawnly/gh-linear">
-						gh-linear
-					</Card>
-					<Card href="https://github.com/rawnly/splash-cli">
-						splash-cli
-					</Card>
-					<Card href="https://github.com/rawnly/env-manager">
-						env-manager
-					</Card>
-					<Card href="https://github.com/rawnly/rdkafka-cli">
-						rdkafka-cli
-					</Card>
-					<Card href="https://github.com/rawnly/gitgud">
-						gitgud
-					</Card>
-					<Card href="https://github.com/rawnly/auth0-jwt">
-						auth0-jwt
-					</Card>
-				</div>
-			</section>
-		</main>
-		<div class='sm:fixed max-sm:mt-12 max-sm:justify-center px-4 py-6 backdrop-blur w-full bottom-0 left-5 text-neutral-11 flex gap-2 items-center justify-start'>
-			<div class='relative size-2'>
-				<div class='w-full z-50 absolute inset-0 rounded-full bg-green-10' />
-				<div class='w-full absolute inset-0 rounded-full bg-green-6 animate-ping' />
-			</div>
-			<span>Currently in Milan, Italy</span>
+		<p class='mt-6 tracking-tight'>
+			At the age of 7, my passion for technology was sparked by my brother, who despite everything, engaged me in tech and science. His love for games and technology deeply influenced me and inspired my career choice. Now as a Software Engineer, I thrive on perpetual learning and the exploration of emerging technologies.
+		</p>
+	</section>
+	<section class='mt-12'>
+		<h2 class='font-bold text-2xl mb-4'>Projects</h2>
+		<div class='flex flex-wrap items-start justify-start gap-2'>
+			<Card href="https://github.com/rawnly/gist.nvim">
+				gist.nvim
+			</Card>
+			<Card href="https://next-wayfinder.dev">
+				next-wayfinder
+			</Card>
+			<Card href="https://github.com/rawnly/hawk">
+				hawk
+			</Card>
+			<Card href="https://raycast-music.app">
+				Raycast Music
+			</Card>
+			<Card href="https://github.com/rawnly/gh-linear">
+				gh-linear
+			</Card>
+			<Card href="https://github.com/rawnly/splash-cli">
+				splash-cli
+			</Card>
+			<Card href="https://github.com/rawnly/env-manager">
+				env-manager
+			</Card>
+			<Card href="https://github.com/rawnly/rdkafka-cli">
+				rdkafka-cli
+			</Card>
+			<Card href="https://github.com/rawnly/gitgud">
+				gitgud
+			</Card>
+			<Card href="https://github.com/rawnly/auth0-jwt">
+				auth0-jwt
+			</Card>
 		</div>
-	</body>
-</html>
+	</section>
+</Layout>
