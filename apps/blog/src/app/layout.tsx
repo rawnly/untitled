@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 import PreviewBadge from "@/components/PreviewBadge";
 import Script from "next/script";
 import { Providers } from "./providers";
-import { fontMono } from "@/fonts";
+import { fontMono, fontMonoBold } from "@/fonts";
 import clsx from "clsx";
 import { Suspense } from "react";
 import PostHogPageView from "@repo/ui/analytics";
@@ -29,7 +29,8 @@ export default function RootLayout({
       <body
         className={clsx(
           "w-screen min-h-screen bg-neutral-1 text-neutral-11",
-          fontMono.variable
+          fontMono.variable,
+          fontMonoBold.variable
         )}
       >
         <Suspense>

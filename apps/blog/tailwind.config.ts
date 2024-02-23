@@ -31,6 +31,7 @@ export default {
     extend: {
       fontFamily: {
         mono: ["var(--font-mono)"],
+        'mono-bold': ["var(--font-mono-bold)"],
       },
     },
   },

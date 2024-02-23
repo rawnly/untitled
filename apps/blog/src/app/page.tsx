@@ -2,11 +2,9 @@ import { allPosts } from "contentlayer/generated";
 import PostsList from "./PostsList";
 import Link from "next/link";
 import SearchTag from "./SearchTag";
-import { Fragment } from "react";
 import HackerText from "@/components/HackerText";
 
 import clsx from "clsx";
-import { fontMono } from "@/fonts";
 
 export default async function Page({ params, searchParams }: any) {
   const isFilteredByTag = !!searchParams.tag;
