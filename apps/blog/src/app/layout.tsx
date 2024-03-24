@@ -9,6 +9,7 @@ import { fontMono, fontMonoBold } from "@/fonts";
 import clsx from "clsx";
 import { Suspense } from "react";
 import PostHogPageView from "@repo/ui/analytics";
+import CookieBanner from "@/components/CookieBanner";
 
 export const metadata = {
   title: "untitled.dev",
@@ -38,7 +39,7 @@ export default function RootLayout({
         </Suspense>
         <div className="px-2 mx-auto max-w-6xl text-base sm:px-4">
           <Providers>{children}</Providers>
-          {(isDev || isPreview) && <PreviewBadge />}
+          {/* {(isDev || isPreview) && <PreviewBadge />} */}
         </div>
         <footer>
           <div className="overflow-hidden py-10 px-6 mx-auto max-w-7xl sm:py-8 lg:px-8">
@@ -75,6 +76,7 @@ export default function RootLayout({
             </nav>
           </div>
         </footer>
+        <CookieBanner />
       </body>
     </html>
   );
