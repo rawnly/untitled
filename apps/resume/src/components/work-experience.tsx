@@ -1,9 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { useInView } from "react-intersection-observer";
-import ScrambleText from "@repo/ui/hacker-text";
-import * as Avatar from "@radix-ui/react-avatar";
 import clsx from "clsx";
 import { MagneticContainer } from "@repo/ui/magnet";
 
@@ -21,10 +16,8 @@ interface WorkExperience {
 }
 
 export default function WorkExperience(props: WorkExperience) {
-  const { ref, inView } = useInView();
-
   return (
-    <div ref={ref} className="space-y-4">
+    <div className="space-y-4">
       <div className="flex gap-4 justify-start items-end max-sm:items-start max-sm:flex-col">
         <MagneticContainer direction="both">
           <div className="overflow-hidden relative w-12 h-12 rounded aspect-square print:hidden">
