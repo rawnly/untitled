@@ -17,6 +17,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Federico Vitale - Resume",
   description: "Federico Vitale's resume",
+  themeColor: "#111113",
+  keywords: ["resume", "federico vitale", "software engineer", "rust", "go", "typescript", "react", "next.js"]
 };
 
 export default function RootLayout({
