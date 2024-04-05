@@ -145,7 +145,7 @@ export default function Page() {
               company="Aquacloud"
               period="Sept 2021 - Oct 2023"
               technologies={["Next.js", "React", "Rust", "Typescript"]}
-              location="Trento"
+              location="Trento, (Remote)"
             >
               Led the front-end team in our endeavor to develop an accessible
               and maintainable platform that drives innovation in the
@@ -162,11 +162,11 @@ export default function Page() {
             <WorkExperience
               image={favicon("facile.it")}
               // image="/companies/facile.jpeg"
-              role="React Engineer"
+              role="Software Engineer"
               company="Facile.it"
               period="May 2021 - Sept 2021"
               technologies={["React", "PHP", "Typescript"]}
-              location="Milan"
+              location="Milan, (Remote)"
             >
               During my tenure at Facile, I was entrusted with the development
               of an internal tool specifically focused on refactoring the
@@ -178,11 +178,11 @@ export default function Page() {
             <WorkExperience
               // image="/companies/chili.jpeg"
               image={favicon("it.chili.com")}
-              role="Frontend Engineer"
+              role="Software Engineer"
               company="CHILI"
               period="June 2020 - May 2021"
               technologies={["React", "Typescript"]}
-              location="Milan"
+              location="Milan, (Hybrid)"
               className="space-y-2"
             >
               <p>
