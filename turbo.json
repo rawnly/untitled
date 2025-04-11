@@ -10,7 +10,7 @@
     "NEXT_PUBLIC_URL",
     "NEXT_PUBLIC_POSTHOG_HOST"
   ],
-  "pipeline": {
+  "tasks": {
     "build": {
       "dependsOn": [
         "^build"
