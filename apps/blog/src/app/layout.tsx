@@ -7,8 +7,6 @@ import Script from "next/script";
 import { Providers } from "./providers";
 import { fontMono, fontMonoBold } from "@/fonts";
 import clsx from "clsx";
-import { Suspense } from "react";
-import PostHogPageView from "@repo/ui/analytics";
 
 export const metadata = {
   title: "untitled.dev",
@@ -33,9 +31,7 @@ export default function RootLayout({
           fontMonoBold.variable
         )}
       >
-        <Suspense>
-          <PostHogPageView />
-        </Suspense>
+        
         <div className="px-2 mx-auto max-w-6xl text-base sm:px-4">
           <Providers>{children}</Providers>
           {(isDev || isPreview) && <PreviewBadge />}
@@ -75,6 +71,8 @@ export default function RootLayout({
             </nav>
           </div>
         </footer>
+
+        <Script async src="https://cdn.seline.com/seline.js" data-token="223ec64e5be7b07" />
       </body>
     </html>
   );
