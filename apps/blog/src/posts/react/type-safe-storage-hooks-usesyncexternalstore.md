@@ -1,15 +1,13 @@
 ---
 title: "Type-Safe Storage Hooks in React"
 date: 2026-02-10
-summary: "React 18 introduced a powerful but often overlooked hook: `useSyncExternalStore`. While it often flies under the radar, it is the modern standard for subscribing to external data sources"
+summary: "React 18 introduced a powerful but often overlooked hook: useSyncExternalStore, let's see how to use it"
 tags:
   - react
   - typescript
   - frontend
   - web
 ---
-
-# Building Type-Safe Storage Hooks with useSyncExternalStore
 
 React 18 introduced a powerful but often overlooked hook: `useSyncExternalStore`. While it often flies under the radar, it is the modern standard for subscribing to external data sources. In this article, we'll explore how to leverage this hook to build robust, type-safe storage hooks for `localStorage` and `sessionStorage`.
 
