@@ -1,12 +1,12 @@
 import "./globals.css";
 
 import Link from "next/link";
-import { headers } from "next/headers";
-import PreviewBadge from "@/components/PreviewBadge";
-import Script from "next/script";
 import { Providers } from "./providers";
 import { fontMono, fontMonoBold } from "@/fonts";
 import clsx from "clsx";
+import { Suspense } from "react";
+import PostHogPageView from "@repo/ui/analytics";
+import CookieBanner from "@/components/CookieBanner";
 
 export const metadata = {
   title: "untitled.dev",
@@ -19,9 +19,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const isPreview = headers().has("x-preview");
-  const isDev = headers().has("x-dev");
-
   return (
     <html lang="en">
       <body
@@ -34,7 +31,7 @@ export default function RootLayout({
         
         <div className="px-2 mx-auto max-w-6xl text-base sm:px-4">
           <Providers>{children}</Providers>
-          {(isDev || isPreview) && <PreviewBadge />}
+          {/* {(isDev || isPreview) && <PreviewBadge />} */}
         </div>
         <footer>
           <div className="overflow-hidden py-10 px-6 mx-auto max-w-7xl sm:py-8 lg:px-8">
@@ -71,8 +68,7 @@ export default function RootLayout({
             </nav>
           </div>
         </footer>
-
-        <Script async src="https://cdn.seline.com/seline.js" data-token="223ec64e5be7b07" />
+        <CookieBanner />
       </body>
     </html>
   );

@@ -30,6 +30,7 @@
     "clsx": "^2.0.0",
     "contentlayer": "^0.3.2",
     "date-fns": "^2.30.0",
+    "framer-motion": "^11.0.20",
     "jotai": "^2.1.0",
     "lucide-react": "^0.125.0",
     "million": "^2.6.4",

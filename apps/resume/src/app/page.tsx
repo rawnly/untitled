@@ -1,9 +1,11 @@
-import clsx from "clsx";
-import Avatar from "@radix-ui/react-avatar";
 import WorkExperience from "@/components/work-experience";
-import { MagneticContainer } from "@repo/ui/magnet";
 import ScrambledText from "@repo/ui/hacker-text";
 import Link from "next/link";
+
+function favicon(domain: string, size: number = 128) {
+  return `https://www.google.com/s2/favicons?domain=${domain}&sz=${size}`
+}
+
 
 export default function Page() {
   return (
@@ -74,18 +76,6 @@ export default function Page() {
               </li>
             </ul>
           </div>
-          {/* <div className="grid grid-cols-2 gap-4"> */}
-          {/*   <MagneticContainer direction="x"> */}
-          {/*     <button className="w-full text-sm font-medium text-center rounded border hover:opacity-75 bg-neutral-3 border-neutral-6 text-neutral-12"> */}
-          {/*       <p className="py-2 px-4">PDF</p> */}
-          {/*     </button> */}
-          {/*   </MagneticContainer> */}
-          {/*   <MagneticContainer direction="x"> */}
-          {/*     <button className="w-full text-sm font-medium text-center rounded border hover:opacity-75 bg-neutral-3 border-neutral-6 text-neutral-12"> */}
-          {/*       <p className="py-2 px-4">PDF</p> */}
-          {/*     </button> */}
-          {/*   </MagneticContainer> */}
-          {/* </div> */}
         </aside>
 
         <div className="col-span-6">
@@ -113,35 +103,49 @@ export default function Page() {
               image="/companies/satispay.jpeg"
               role="Software Engineer"
               company="Satispay"
-              period="2024"
-              technologies={["React", "Typescript"]}
+              period="Oct 2023 - Current"
+              technologies={["React", "Typescript", "AWS"]}
               location="Milan (Hybrid)"
             ></WorkExperience>
 
             <WorkExperience
-              image="/companies/palette.jpeg"
+              image={favicon("lokus.io")}
+              role="Software Engineer"
+              company="Lokus"
+              period="Oct 2023 - Jan 2024"
+              technologies={["Next.js", "Typescript", "Node"]}
+              location="Remote"
+              extra="contract"
+            >
+              I collaborated on the MVP launch of the Lokus.io platform, by joining the existing codebase and helping
+              the founder to ship the product faster. 
+
+              My primary responsibilities included developing new features, improving the existing codebase, and migrate the platform to a monorepo structure.
+            </WorkExperience>
+            <WorkExperience
+              image={favicon("palette.dev")}
               role="Software Engineer, Rust"
               company="Palette"
               period="Jul 2023"
               technologies={["Rust", "Tokio", "Apache Kafka"]}
-              location="San Francisco"
+              location="San Francisco, Remote"
               extra="contract"
             >
               I assisted Palette in transitioning a TypeScript micro-service to
               Rust. My primary responsibilities included utilising Rust’s
               asynchronous and multithreaded capabilities to optimise the
               performance and reliability of the micro-service. As result of the
-              transition the new product is 2 times faster and capable to ingest
-              up to 500k msg/s from Kafka.
+              transition the new product performance increased by 300% and is capable to ingest
+              up to ~500k msg/s from Kafka with 100mb flat usage
             </WorkExperience>
 
             <WorkExperience
               image="/companies/aquacloud.jpeg"
               role="Software Engineer"
               company="Aquacloud"
-              period="Sept 2021 - Nov 2023"
+              period="Sept 2021 - Oct 2023"
               technologies={["Next.js", "React", "Rust", "Typescript"]}
-              location="Trento"
+              location="Trento, (Remote)"
             >
               Led the front-end team in our endeavor to develop an accessible
               and maintainable platform that drives innovation in the
@@ -156,12 +160,13 @@ export default function Page() {
             </WorkExperience>
 
             <WorkExperience
-              image="/companies/facile.jpeg"
-              role="React Engineer"
+              image={favicon("facile.it")}
+              // image="/companies/facile.jpeg"
+              role="Software Engineer"
               company="Facile.it"
               period="May 2021 - Sept 2021"
               technologies={["React", "PHP", "Typescript"]}
-              location="Milan"
+              location="Milan, (Remote)"
             >
               During my tenure at Facile, I was entrusted with the development
               of an internal tool specifically focused on refactoring the
@@ -171,12 +176,13 @@ export default function Page() {
             </WorkExperience>
 
             <WorkExperience
-              image="/companies/chili.jpeg"
-              role="Frontend Engineer"
+              // image="/companies/chili.jpeg"
+              image={favicon("it.chili.com")}
+              role="Software Engineer"
               company="CHILI"
               period="June 2020 - May 2021"
               technologies={["React", "Typescript"]}
-              location="Milan"
+              location="Milan, (Hybrid)"
               className="space-y-2"
             >
               <p>
@@ -211,7 +217,8 @@ export default function Page() {
             </WorkExperience>
 
             <WorkExperience
-              image="/companies/simul_tech.jpeg"
+              // image="/companies/simul_tech.jpeg"
+              image={favicon("simultech.it")}
               role="Fullstack Developer"
               company="Simultech"
               period="Dec 2018 - June 2020"
@@ -232,7 +239,7 @@ export default function Page() {
                   from Angular to React, ensuring a seamless transition.
                 </li>
                 <li>
-                  <strong>schoolr.net</strong>: Assisted the client by
+                  <Link className='font-bold text-primary-11' href="https://schoolr.net">schoolr.net</Link>: Assisted the client by
                   transforming their design into a functional application. This
                   involved migrating an existing PHP-based web application to
                   Next.js and developing an administration panel.
@@ -282,9 +289,9 @@ export default function Page() {
               year={2022}
             >
               <p>
-                <a href="#">
+                <Link href="https://github.com/orgs/community/discussions/18055#discussioncomment-3703595">
                   Github actions don't yet support workflows inside subfolders
-                </a>
+                </Link>
                 , neither in your <code>.github/workflows/</code> folder or
                 project custom folders. So I made hawk to solve this problem
                 without using custom commands. It lets you copy workflows from

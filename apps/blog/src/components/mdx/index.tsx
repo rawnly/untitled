@@ -1,8 +1,6 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { tv } from "tailwind-variants";
-import CopyContent from "./CopyContent";
-import Image from "next/image";
 
 const linkVariants = tv({
   base: "text-primary-11 hover:underline",
@@ -66,7 +64,8 @@ export const h1 = ({
   <h1
     {...props}
     className={clsx(
-      "scroll-m-20 text-4xl font-extrabold tracking-tight first:mt-0 mt-10 lg:text-5xl",
+      "font-mono",
+      "scroll-m-20 text-4xl tracking-tight first:mt-0 mt-10 lg:text-5xl",
       className
     )}
   >
@@ -82,6 +81,7 @@ export const h2 = ({
   <h2
     {...props}
     className={clsx(
+      "font-serif",
       "scroll-m-20 border-b pb-4 mb-2 mt-6 text-3xl font-semibold tracking-tight transition-colors first:mt-0",
       "border-neutral-6",
       className
@@ -156,7 +156,7 @@ const codeVariants = tv({
   base: [
     "tabular-nums",
     "relative rounded px-[0.3rem] py-[0.2rem] font-mono text-sm",
-    "text-neutral-12"
+    "text-neutral-12",
   ],
 });
 
@@ -177,19 +177,19 @@ const preVariants = tv({
     "text-sm",
     "border rounded p-4 my-4 overflow-x-scroll",
     "relative group",
-    "bg-neutral-3 border-neutral-6"
+    "bg-neutral-3 border-neutral-6",
   ],
 });
 
 export function img(props: any) {
   return (
-    <img 
-      className='mx-auto w-full rounded-lg shadow-lg'
-      src={props.src} 
-      alt={props.alt} 
-      style={{objectFit: "contain"}}
+    <img
+      className="mx-auto w-full rounded-lg shadow-lg"
+      src={props.src}
+      alt={props.alt}
+      style={{ objectFit: "contain" }}
     />
-  )
+  );
 }
 
 export function pre({
