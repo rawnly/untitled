@@ -1,9 +1,6 @@
 import "./globals.css";
 
 import Link from "next/link";
-import { headers } from "next/headers";
-import PreviewBadge from "@/components/PreviewBadge";
-import Script from "next/script";
 import { Providers } from "./providers";
 import { fontMono, fontMonoBold } from "@/fonts";
 import clsx from "clsx";
@@ -22,9 +19,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const isPreview = headers().has("x-preview");
-  const isDev = headers().has("x-dev");
-
   return (
     <html lang="en">
       <body
