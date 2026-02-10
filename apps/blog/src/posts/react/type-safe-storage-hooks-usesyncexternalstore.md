@@ -1,6 +1,7 @@
 ---
 title: "Type-Safe Storage Hooks in React"
 date: 2026-02-10
+image: /images/type-safe-storage-hooks-usesyncexternalstore/image.png
 summary: "React 18 introduced a powerful but often overlooked hook: useSyncExternalStore, let's see how to use it"
 tags:
   - react
